@@ -14,8 +14,6 @@ import {
 } from "react-native";
 import * as Crypto from "expo-crypto";
 
-// --- Typer ---
-
 type Monster = {
 	id: string;
 	name: string;
@@ -31,16 +29,12 @@ type MonsterFormValues = {
 
 type FormErrors = Partial<MonsterFormValues>;
 
-// --- Konstanter ---
-
 const EMPTY_FORM: MonsterFormValues = { name: "", eyes: "", tentacles: "" };
 
 const INITIAL_MONSTERS: Monster[] = [
 	{ id: Crypto.randomUUID(), name: "Zoglorp", eyes: 4, tentacles: 8 },
 	{ id: Crypto.randomUUID(), name: "Blibbex", eyes: 1, tentacles: 3 },
 ];
-
-// --- Subkomponenter ---
 
 type MonsterCardProps = {
 	monster: Monster;
@@ -89,8 +83,6 @@ const FormField = ({
 		{error && <Text style={styles.errorText}>{error}</Text>}
 	</View>
 );
-
-// --- App ---
 
 export default function App() {
 	const [monsters, setMonsters] = useState<Monster[]>(INITIAL_MONSTERS);
@@ -232,8 +224,6 @@ export default function App() {
 		</View>
 	);
 }
-
-// --- Styles ---
 
 const styles = StyleSheet.create({
 	container: {
