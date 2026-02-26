@@ -47,7 +47,7 @@ const MonsterCard = ({ monster, isExpanded, onToggle }: MonsterCardProps) => (
 		<Text style={styles.monsterName}>{monster.name}</Text>
 		{isExpanded && (
 			<View style={styles.monsterDetails}>
-				<Text style={styles.detailText}>👁 Ögon: {monster.eyes}</Text>
+				<Text style={styles.detailText}>👁️ Ögon: {monster.eyes}</Text>
 				<Text style={styles.detailText}>
 					🐙 Tentakler: {monster.tentacles}
 				</Text>
