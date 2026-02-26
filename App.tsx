@@ -1,4 +1,3 @@
-// import "react-native-get-random-values";
 import { useState } from "react";
 import {
 	View,
@@ -13,7 +12,7 @@ import {
 	KeyboardAvoidingView,
 	KeyboardTypeOptions,
 } from "react-native";
-import { v4 as uuidv4 } from "uuid";
+import * as Crypto from "expo-crypto";
 
 // --- Typer ---
 
@@ -37,8 +36,8 @@ type FormErrors = Partial<MonsterFormValues>;
 const EMPTY_FORM: MonsterFormValues = { name: "", eyes: "", tentacles: "" };
 
 const INITIAL_MONSTERS: Monster[] = [
-	{ id: uuidv4(), name: "Zoglorp", eyes: 4, tentacles: 8 },
-	{ id: uuidv4(), name: "Blibbex", eyes: 1, tentacles: 3 },
+	{ id: Crypto.randomUUID(), name: "Zoglorp", eyes: 4, tentacles: 8 },
+	{ id: Crypto.randomUUID(), name: "Blibbex", eyes: 1, tentacles: 3 },
 ];
 
 // --- Subkomponenter ---
@@ -148,7 +147,7 @@ export default function App() {
 		if (!validate()) return;
 
 		const newMonster: Monster = {
-			id: uuidv4(),
+			id: Crypto.randomUUID(),
 			name: form.name.trim(),
 			eyes: Number.parseInt(form.eyes, 10),
 			tentacles: Number.parseInt(form.tentacles, 10),
