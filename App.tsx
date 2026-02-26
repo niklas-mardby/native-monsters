@@ -157,7 +157,7 @@ export default function App() {
 
 	return (
 		<View style={styles.container}>
-			<Text style={styles.heading}>Monsterlistan 👾</Text>
+			<Text style={styles.heading}>👾 native-monsters 👾</Text>
 
 			<FlatList
 				data={monsters}
